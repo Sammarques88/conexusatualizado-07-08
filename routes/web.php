@@ -16,15 +16,16 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ROTA PARA ÁREA DO USUÁRIO (protegida por autenticação)
 Route::middleware('auth')->group(function () {
     Route::get('/area-usuario', function () {
-        return view('area_usuario');
+        return view('area-user'); // <-- Corrigido aqui
     })->name('area.usuario');
 
     // Mantenha apenas uma rota para a área do usuário.
-    // O que antes era Route::get('/area') agora é a rota 'area.usuario'.
     Route::get('/area', function () {
         return redirect()->route('area.usuario');
     })->name('area-user');
 });
+
+
 
 // ROTAS GERAIS
 Route::get('/', function () {

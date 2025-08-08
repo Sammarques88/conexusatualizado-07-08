@@ -69,7 +69,8 @@
 
     <button type="submit" class="submit-btn">Cadastrar</button>
     </form>
-            <p class="login-link">Já tem uma conta? <a href="">Faça login</a></p>
+            <p class="login-link">Já tem uma conta? <a href="{{ route('login') }}">Faça login</a></p>
+
         </div>
     </div>
 
