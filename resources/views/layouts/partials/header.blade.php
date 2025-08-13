@@ -45,10 +45,21 @@
         <button type="submit">&#128269;</button>
       </form>
 
-      <section class="btn-contato">
+     <section class="btn-contato">
+    @auth
+        <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit">Sair</button>
+        </form>
+    @endauth
+
+    @guest
         <a href="{{ route('cadastro.create') }}">
             <button>Conecte-se</button>
         </a>
+    @endguest
+</section>
+
       </section>
     </div>
     <script>

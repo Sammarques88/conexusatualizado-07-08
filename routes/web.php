@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
     })->name('area-user');
 });
 
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
 
 // ROTAS GERAIS
